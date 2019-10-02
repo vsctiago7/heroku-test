@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run build && node ./build/app.js",
+    "start": "npm run build && node ./build/bin/www.js",
     "server": "babel-node ./src/bin/www",
     "server:prod": "node ./dist/bin/www",
     "dev": "SET NODE_ENV=development & npm-run-all server",

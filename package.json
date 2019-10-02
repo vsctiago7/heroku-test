@@ -3,9 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node src/app.js",
+    "start": "npm run build && node ./build/src/app.js",
     "server": "babel-node ./src/bin/www",
+    "server:prod": "node ./dist/bin/www",
     "dev": "SET NODE_ENV=development & npm-run-all server",
+    "clean": "rimraf dist",
+    "build": "npm run clean && npm run build-babel",
+    "oldbuild": "babel ./src --out-dir dist",
+    "build-babel": "babel -d ./build ./src -s",
+    "prod": "SET NODE_ENV=production & npm-run-all clean build server:prod",
     "watch": "nodemon"
   },
   "dependencies": {

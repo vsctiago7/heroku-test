@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm run build && node ./build/src/app.js",
+    "start": "npm run build && node ./build/app.js",
     "server": "babel-node ./src/bin/www",
     "server:prod": "node ./dist/bin/www",
     "dev": "SET NODE_ENV=development & npm-run-all server",
-    "clean": "rimraf dist",
+    "clean": "rimraf build && mkdir build",
     "build": "npm run clean && npm run build-babel",
     "oldbuild": "babel ./src --out-dir dist",
     "build-babel": "babel -d ./build ./src -s",

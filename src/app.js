@@ -9,7 +9,7 @@ import indexRouter from "./routes/index";
 const app = express();
 
 const corsOptions = {
-  origin: "https://fercodes.netlify.com/"
+  origin: "https://fercodes.netlify.com"
 }
 
 app.use(logger("dev"));
